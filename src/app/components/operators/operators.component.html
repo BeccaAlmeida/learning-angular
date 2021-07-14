@@ -1,0 +1,23 @@
+<div class="operators-button">
+  <div class="box">
+    <ion-title>Operators</ion-title>
+    <ion-button color="success" (click)="mapClick()">Map</ion-button>
+    <ion-button color="warning" (click)="filterClick()">Filter</ion-button>
+    <ion-button color="primary" (click)
+    ="lastClick()">Last</ion-button>
+    <ion-button color="medium" (click)="debounceTimeClick()">Debounce Time</ion-button>
+    <ion-button color="dark" (click)="debounceTimeSearch()">Debounce Time Search</ion-button>
+    <ion-button color="success" (click)="takeWhileClick()">Take While</ion-button>
+    <ion-button color="warning" (click)="takeUntilClick()">Take Until</ion-button>
+  </div>
+
+  <div class="ion-activatable debounceArea">
+    <ion-label class="text-ripple">Click</ion-label>
+    <ion-ripple-effect></ion-ripple-effect>
+  </div>
+  <hr>
+  <form>
+    <ion-label>Search by: </ion-label>
+    <input name="type" placeholder="Type something" autocomplete="off" (keyup)="searchBy_usingDebounce($event)" [(ngModel)]="serchInput">
+  </form>
+</div>

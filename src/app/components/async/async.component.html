@@ -1,0 +1,23 @@
+<div class="basic-creation-button">
+  <div class="box">
+    <ion-title>Templates / Async</ion-title>
+    <ion-card>
+      <ion-card-title>Select the options bellow</ion-card-title>
+      <ion-card-content>
+        <ion-select multiple="true">
+          <ion-select-option *ngFor="let item of options$ | async">{{item}}</ion-select-option>
+        </ion-select>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="user$|async as user; else loadingUser">
+      <div>
+        <p>Name: {{user.name}}</p>
+        <p>Login: {{user.login}}</p>
+      </div>
+
+    </ion-card>
+    <ng-template #loadingUser>
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </ng-template>
+  </div>
+</div>

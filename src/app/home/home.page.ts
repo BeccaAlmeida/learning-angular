@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  option: string;
+  checked: boolean;
+
   constructor() {}
 
+  checkedCheckbox($event) {
+    this.checked = $event;
+    console.log(this.checked);
+  }
 }

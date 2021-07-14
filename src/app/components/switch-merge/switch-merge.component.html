@@ -1,0 +1,33 @@
+<div class="container">
+
+ <div class="box">
+  <form action="">
+    <ion-col>
+      <ion-item class="item">
+        <ion-label class="label">Seach By:</ion-label>
+        <ion-input class="item__input" placeholder='type something' name="searchBy" autocomplete='off' [(ngModel)]="searchInput" #search></ion-input>
+      </ion-item>
+    </ion-col>
+  </form>
+ </div>
+  <ion-row >
+    <div  style="margin: 0 30px; background-color: rgba(0, 0, 0, 0);">
+      <ion-list >
+          <table class="table">
+            <tr>
+              <th>NAME</th>
+              <th>EMAIl</th>
+              <th>CITY</th>
+              <th>COUNTRY</th>
+            </tr>
+            <tr *ngFor="let item of people$ | async">
+              <td>{{item.firstname}}, {{item.lastname}}</td>
+              <td>$ {{item.email}}</td>
+              <td>{{item.city}}</td>
+              <td>{{item.country}}</td>
+            </tr>
+          </table>
+      </ion-list>
+    </div>
+  </ion-row>
+</div>

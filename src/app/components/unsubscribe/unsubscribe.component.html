@@ -1,0 +1,11 @@
+<div class="basic-creation-button">
+  <div class="box">
+    <ion-title>Obsevables</ion-title>
+    <ion-button color="success" (click)="subscribe()">Subscribe All</ion-button>
+    <ion-spinner color="warning" name="bubbles" *ngIf="subscriptionsActive"></ion-spinner>
+  </div>
+
+  <div>
+    <ion-button color="danger" (click)="unsubscribe()" [disabled]='!subscriptionsActive'>Unsubscribe All</ion-button>
+  </div>
+</div>

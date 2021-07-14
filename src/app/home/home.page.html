@@ -1,20 +1,64 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      HOME
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div>
+    <div>
+      <ion-list>
+        <ion-radio-group [(ngModel)] = option>
+          <ion-item>
+            <ion-label>Basic-Creation</ion-label>
+            <ion-radio value="basic-creation" (ionChange)="checkedCheckbox($event)"></ion-radio>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+          </ion-item>
+          <ion-item>
+            <ion-label>operators</ion-label>
+            <ion-radio value="operators" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Templates / Async</ion-label>
+            <ion-radio value="async" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Error Handling / Async</ion-label>
+            <ion-radio value="error-handling" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Drag and Drop</ion-label>
+            <ion-radio value="draganddrop" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Unsubscribe</ion-label>
+            <ion-radio value="unsubscribe" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Switch Merge</ion-label>
+            <ion-radio value="switchmerge" (ionChange)="checkedCheckbox($event)"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div>
+      <ng-container [ngSwitch]="option">
+        <app-basic-creation *ngSwitchCase="'basic-creation'"></app-basic-creation>
+        <app-operators *ngSwitchCase="'operators'" ></app-operators>
+        <app-async *ngSwitchCase="'async'" ></app-async>
+        <app-error-handling *ngSwitchCase="'error-handling'" ></app-error-handling>
+        <app-drag-and-drop *ngSwitchCase="'draganddrop'"></app-drag-and-drop>
+        <app-unsubscribe *ngSwitchCase="'unsubscribe'"></app-unsubscribe>
+        <app-switch-merge *ngSwitchCase="'switchmerge'"></app-switch-merge>
+      </ng-container>
+    </div>
   </div>
 </ion-content>
